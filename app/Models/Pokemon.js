@@ -25,7 +25,7 @@ export class Pokemon{
             <div>
               <h3></h3>
               <h3>${this.weight}</h3>
-              <button class="btn btn-success rounded mb-2">Catch Pokemon!</button>
+              <button onclick = "app.pokedexController.catchPokemon()" class="btn btn-success rounded mb-2">Catch Pokemon!</button>
             </div>
           </div>
     `

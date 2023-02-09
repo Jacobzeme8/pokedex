@@ -4,6 +4,10 @@ import { PokedexApi } from "./AxiosService.js"
 
 
 class PokedexService{
+  catchPokemon() {
+    appState.myPokedex.push(appState.pokemon)
+    console.log(appState.myPokedex);
+  }
   async getPokemon(name) {
     const index = appState.pokedex.find(p => p.name == name)
     const res = await PokedexApi.get(index.name)

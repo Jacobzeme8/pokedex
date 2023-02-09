@@ -45,5 +45,13 @@ export class PokedexController{
     }
   }
 
+  async catchPokemon(){
+    try {
+      await pokedexService.catchPokemon()
+    } catch (error) {
+      Pop.error(error)
+    }
+  }
+
 
 }
