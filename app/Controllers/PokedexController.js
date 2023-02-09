@@ -18,6 +18,16 @@ function _drawPokemon(){
   template = appState.pokemon.PokemonCard
   setHTML('pokemon-card', template)
 }
+
+
+function _drawMyPokemon(){
+  let template = ""
+  appState.myPokedex.forEach(p => template += p.MyPokemon)
+  setHTML('my-pokemon', template)
+  
+}
+
+
 export class PokedexController{
 
 
@@ -25,7 +35,7 @@ export class PokedexController{
     this.getPokedex()
     appState.on('pokedex', _drawPokedex)
     appState.on('pokemon', _drawPokemon)
-
+    appState.on('myPokedex', _drawMyPokemon)
   }
 
 

@@ -5,7 +5,7 @@ export const PokedexApi = axios.create({
 })
 
 export const sandboxApi = axios.create({
-  baseURL:"https://bcw-sandbox.herokuapp.com/api/TrainerYakub/pokemon",
+  baseURL:"https://bcw-sandbox.herokuapp.com/api/TrainerYakub",
   setTimeout: 2500
 })
 

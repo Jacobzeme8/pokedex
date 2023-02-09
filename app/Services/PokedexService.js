@@ -1,12 +1,14 @@
 import { appState } from "../AppState.js"
 import { Pokemon } from "../Models/Pokemon.js";
-import { PokedexApi } from "./AxiosService.js"
+import { PokedexApi, sandboxApi } from "./AxiosService.js"
 
 
 class PokedexService{
-  catchPokemon() {
+  async catchPokemon() {
+    const res = await sandboxApi.post('/pokemon', appState.pokemon)
+    console.log(res);
     appState.myPokedex.push(appState.pokemon)
-    console.log(appState.myPokedex);
+    appState.emit('myPokedex')
   }
   async getPokemon(name) {
     const index = appState.pokedex.find(p => p.name == name)
